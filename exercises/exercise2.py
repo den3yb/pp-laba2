@@ -23,4 +23,4 @@ def main(dataset:str,copy_path:str,name:str)->None:
 
 
 if __name__ == '__main__':
-    main("C:\Proganiy\Git PP\dataset","C:\Proganiy\pp-laba2\dataset","annotation_for_copy.csv")
+    main("C:\Proganiy\Git PP\dataset","C:\Proganiy\pp-laba2\dataset_short","annotation_for_copy.csv")
