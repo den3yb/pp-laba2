@@ -1,15 +1,15 @@
 import os
 
-def next(dataset:str,rait:str,count:int) ->str:
+def get(dataset:str,rait:str,count:int) ->str:
     for fold in os.listdir(dataset):
         if fold == rait:
             absolute = os.path.join(dataset,fold)
             all_rait = os.listdir(absolute)
-            print (os.path.join(absolute, all_rait[count]))
-    
+            return os.path.join(absolute, all_rait[count])
+    return None    
 
 
 
 
 if __name__ == '__main__':
-    print(next("C:\Proganiy\Git PP\dataset","1",0))
+    print(get("C:\Proganiy\Git PP\dataset","5",3))
