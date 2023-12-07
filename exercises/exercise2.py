@@ -9,7 +9,9 @@ def get_rel(file_path:str,copy_path:str) -> str:
 
 def main(dataset:str,copy_path:str,name:str)->None:
     file_path = os.path.dirname(__file__)
-    f=open(name, "w")
+    if not os.path.exists(copy_path):
+        os.makedirs(copy_path)
+    f=open(name, 'w')
     writer=csv.writer(f,delimiter=',',lineterminator='\n')
     for fold in os.listdir(dataset):
         for file in os.listdir(os.path.join(dataset,fold)):
