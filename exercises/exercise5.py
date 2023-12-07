@@ -1,6 +1,7 @@
 import os
 
 from exercise4 import get
+from typing import Optional
 
 
 class otzovik:
@@ -12,10 +13,11 @@ class otzovik:
         self.limit += len(os.listdir(os.path.join(dataset, rait)))
         print("LIMIT:", self.limit)
 
-    def __iter__(self):
+    def __iter__(self) -> None:
         return self
 
-    def __next__(self):
+    def __next__(self) -> str:
+
         if self.counter < self.limit:
             temp = get(self.dataset, self.rait, self.counter)
             self.counter += 1

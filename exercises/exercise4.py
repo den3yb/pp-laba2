@@ -1,7 +1,15 @@
 import os
+from typing import Optional
 
 
-def get(dataset: str, rait: str, count: int) -> str:
+def get(dataset: str, rait: str, count: int) -> Optional[str]:
+    
+    """
+    Файл принимает абсолютный путь на dataset и значения рейтинга который нужно отоброзить и порядок в каталоге,
+    и возвращает его абсолютный путь
+    
+    """
+
     for fold in os.listdir(dataset):
         if fold == rait:
             absolute = os.path.join(dataset, fold)
